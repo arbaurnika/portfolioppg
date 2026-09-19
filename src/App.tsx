@@ -99,7 +99,10 @@ function App() {
                 </div>
             </div>
         <div className="story-stack">kebaikan
-            <Story title="Cerita Personal" label="INSPIRASI PENDIDIK">#</Story>
+            <Story title="Cerita Personal" label="INSPIRASI PENDIDIK">Terinspirasi dari seorang guru yang selalu menunjukkan ketulusan dan dedikasi dalam membantu peserta didik untuk berkembang, bukan sekedar memberikan materi tetapi,
+              juga membimbing dan memberikan arahan serta dukungan yang dibutuhkan. Hal ini membuat saya ingin menjadi seorang guru yang dapat memberikan dampak
+              positif bagi peserta didik dan membatu mereka mecapai potensi terbaik mereka.
+            </Story>
             <Story title="Motivasi Menjadi Guru" label="PANGGILAN JIWA">Bagi saya, menjadi seorang guru adalah panggilan untuk menjadi pembelajar seumur hidup. Saya ingin mendedikasikan ilmu dan proses bertumbuh untuk membantu orang lain mencapai potensi terbaik mereka.</Story>
         </div>
         </div>
