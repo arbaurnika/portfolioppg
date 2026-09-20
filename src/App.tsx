@@ -42,6 +42,74 @@ const journeyDetails: Record<string, { learning: string[]; skills: string[]; ref
   'Projek Kepemimpinan': { learning: ['Identifikasi kebutuhan sekolah', 'Perencanaan projek', 'Evaluasi dampak'], skills: ['Kepemimpinan', 'Kolaborasi'], reflection: 'Kepemimpinan pendidikan tumbuh melalui keberanian menginisiasi perubahan dan melibatkan komunitas.' },
   'Pengembangan Keprofesian Berkelanjutan': { learning: ['Evaluasi diri profesional', 'Action plan pengembangan', 'Peta jalan pasca PPG'], skills: ['Pembelajar sepanjang hayat', 'Perencanaan karier'], reflection: 'Pengembangan profesional yang konsisten menjaga semangat belajar dan kualitas kontribusi guru.' },
 }
+const courseDetailContent: Record<string, { summary: string; learning: string[]; skills: string[]; reflection: string }> = {
+  'Filosofi Pendidikan dan Pendidikan Nilai': {
+    summary: 'Mempelajari dasar berpikir pendidikan dan nilai karakter yang menjadi landasan dalam membimbing peserta didik.',
+    learning: ['Landasan filosofis pendidikan', 'Nilai dan karakter dalam pembelajaran', 'Peran guru sebagai pembimbing'],
+    skills: ['Reflektif', 'Berpihak pada murid', 'Filosofis'],
+    reflection: 'Mempelajari filosofi dan pendidikan nilai memberikan fondasi moral yang kuat bagi perjalanan saya sebagai pendidik. Saya belajar bahwa setiap proses pembelajaran harus memiliki ruh yang menumbuhkan karakter, sehingga mampu memerdekakan siswa untuk berkembang sesuai potensi dan martabatnya.'
+  },
+  'Peserta Didik dan Pemahamannya': {
+    summary: 'Memahami karakteristik, kebutuhan, dan perkembangan peserta didik agar pembelajaran lebih sesuai dan inklusif.',
+    learning: ['Karakteristik peserta didik', 'Perkembangan psikologis dan sosial', 'Pemetaan kebutuhan belajar'],
+    skills: ['Observasi', 'Empati', 'Analisis kebutuhan'],
+    reflection: 'Mengajar bukan tentang memaksakan satu metode untuk semua orang, melainkan memahami perkembangan psikologis dan sosial siswa. Pengalaman belajar ini mengasah kemampuan saya untuk menganalisis kebutuhan belajar murid, sehingga dapat menyajikan pembelajaran yang relevan, aman, dan berpihak pada tumbuh kembang peserta didik'
+  },
+  'Pembelajaran Mendalam dan Asesmen Dasar': {
+    summary: 'Mendesain pembelajaran yang bermakna dan menyusun asesmen yang sesuai dengan kebutuhan serta tahap perkembangan peserta didik.',
+    learning: ['Modul ajar', 'Pembelajaran aktif', 'Asesmen diagnostik dan formatif'],
+    skills: ['Merancang pembelajaran', 'Menyusun asesmen', 'Evaluatif'],
+    reflection: 'Saya menyadari bahwa asesmen dan perencanaan pembelajaran adalah satu kesatuan yang tidak terpisahkan. Penerapan UbD melatih saya untuk merancang aktivitas belajar berdasarkan tujuan dan asesmen yang jelas, sementara pendekatan DUP memastikan bahwa setiap akses serta modalitas belajar siswa terfasilitasi sehingga proses pembelajaran menjadi lebih bermakna dan inklusif.'
+  },
+  'Pengalaman Lapangan (PPL) Terbimbing': {
+    summary: 'Mengamati langsung praktik pembelajaran di sekolah dan belajar dari konteks nyata kelas serta interaksi guru-murid.',
+    learning: ['Observasi pembelajaran', 'Asistensi guru pamong', 'Praktik mengajar terbimbing'],
+    skills: ['Kolaboratif', 'Adaptif', 'Profesional'],
+    reflection: 'Pengalaman lapangan membuka wawasan saya tentang realitas ruang kelas yang sesungguhnya. Melalui tahapan observasi, asistensi, dan praktik mengajar terbimbing, saya belajar mengintegrasikan teori pembelajaran ke dalam praktik nyata, merespons dinamika siswa secara adil, serta terus mengasah kemampuan adaptasi dan kolaborasi bersama Dosen Pembimbing Lapangan dan Guru Pamong.'
+  },
+  'Pola Pikir Bertumbuh (Growth Mindset)': {
+    summary: 'Mengembangkan sikap belajar yang resilien, terbuka terhadap kritik, dan siap terus berkembang dalam proses profesional.',
+    learning: ['Refleksi diri', 'Resiliensi', 'Pengembangan kemampuan melalui tantangan'],
+    skills: ['Reflektif', 'Tangguh', 'Belajar sepanjang hayat'],
+    reflection: 'Mempelajari pola pikir bertumbuh membuka kesadaran kritis saya tentang pentingnya memandang potensi tanpa batas, baik pada diri sendiri maupun pada peserta didik. Pengalaman ini menginspirasi saya untuk tidak hanya mengembangkan kapasitas pribadi, tetapi juga menciptakan lingkungan belajar yang menghargai proses, usaha, dan keberanian murid dalam mencoba.'
+  },
+  'Pembelajaran Kreatif dan Inovatif': {
+    summary: 'Merancang strategi dan media pembelajaran yang kreatif agar proses belajar lebih menarik, efektif, dan relevan.',
+    learning: ['Media pembelajaran inovatif', 'Metode kreatif', 'Desain pengalaman belajar'],
+    skills: ['Kreatif', 'Inovatif', 'Komunikatif'],
+    reflection: 'Mempelajari pembelajaran kreatif dan inovatif melatih saya untuk berpikir eksploratif dalam merancang strategi mengajar. Saya memahami pentingnya keberanian mencoba pendekatan baru yang berpusat pada siswa, sehingga ruang kelas dapat menjadi tempat yang dinamis untuk menumbuhkan daya pikir kritis, kolaborasi, dan rasa ingin tahu peserta didik.'
+  },
+  'Pembelajaran Sosial Emosional': {
+    summary: 'Memahami pentingnya kesejahteraan sosial emosional dalam pembelajaran agar lingkungan kelas lebih aman dan suportif.',
+    learning: ['Kesadaran diri', 'Pengelolaan emosi', 'Keterampilan sosial'],
+    skills: ['Empati', 'Regulasi diri', 'Kolaborasi'],
+    reflection: 'Mempelajari Pembelajaran Sosial Emosional membuka pandangan saya bahwa untuk membentuk karakter siswa, seorang guru harus terlebih dahulu memiliki regulasi emosi dan kesadaran diri yang baik. Pengalaman ini membekali saya dengan strategi pengajaran yang tidak hanya fokus pada materi, tetapi juga menumbuhkan keterampilan sosial, empati, dan ketangguhan mental peserta didik.'
+  },
+  'Pembelajaran Mendalam dan Asesmen Lanjut': {
+    summary: 'Melanjutkan pengembangan profesional melalui perencanaan asesmen yang lebih kompleks dan berbasis kebutuhan belajar.',
+    learning: ['Asesmen berbasis HOTS', 'Analisis hasil belajar', 'Umpan balik berkelanjutan'],
+    skills: ['Analitis', 'Evaluatif', 'Strategis'],
+    reflection: 'Saya menyadari bahwa asesmen lanjut adalah kunci untuk melakukan perbaikan pembelajaran secara terukur. Pengalaman belajar ini membekali saya kemampuan menganalisis data hasil belajar murid untuk menyesuaikan modul ajar, memberikan umpan balik yang konstruktif, serta memastikan setiap peserta didik mencapai kompetensi secara mendalam dan menyeluruh.'
+  },
+  'Praktik Pengalaman Lapangan Mandiri': {
+    summary: 'Mengelola pembelajaran secara mandiri dengan penuh tanggung jawab untuk melatih kesiapan menjadi guru profesional.',
+    learning: ['Pengelolaan kelas', 'Praktik pembelajaran mandiri', 'Evaluasi dan tindak lanjut'],
+    skills: ['Mandiri', 'Manajemen kelas', 'Pengambilan keputusan'],
+    reflection: 'Praktik mengajar secara mandiri memberikan kesempatan berharga untuk menguji seluruh teori pedagogi dan asesmen yang telah dipelajari. Mengemban tanggung jawab penuh dalam merancang, melaksanakan, hingga mengevaluasi pembelajaran membentuk ketahanan mental dan kepekaan saya sebagai pendidik profesional yang reflektif.'
+  },
+  'Projek Kepemimpinan': {
+    summary: 'Mengembangkan projek kepemimpinan yang memberi dampak pada sekolah, murid, dan komunitas belajar.',
+    learning: ['Perencanaan proyek', 'Implementasi inovasi', 'Evaluasi dampak'],
+    skills: ['Kepemimpinan', 'Kolaborasi', 'Inovasi'],
+    reflection: 'Melalui Projek Kepemimpinan, saya belajar bahwa kepemimpinan dalam pendidikan adalah tentang menggerakkan perubahan dan menghadirkan solusi nyata. Pengalaman merancang serta mengelola proyek berbasis sekolah/komunitas ini mengasah keterampilan kolaborasi, manajemen risiko, dan komunikasi saya untuk menciptakan inovasi berkelanjutan yang memberikan dampak positif bagi lingkungan sekitar.'
+  },
+  'Pengembangan Keprofesian Berkelanjutan': {
+    summary: 'Merencanakan pengembangan diri secara berkelanjutan agar terus tumbuh sebagai pendidik sepanjang hayat.',
+    learning: ['Evaluasi diri', 'Perencanaan karier', 'Pengembangan profesional'],
+    skills: ['Pembelajar sepanjang hayat', 'Perencanaan', 'Inisiatif'],
+    reflection: 'Pembelajaran ini menanamkan kesadaran bahwa menjadi guru profesional adalah perjalanan panjang yang memerlukan evaluasi dan komitmen berkesinambungan. Pengalaman ini menginspirasi saya untuk terus bertransformasi menjadi pendidik yang reflektif, berinisiatif, dan tangguh sebagai pembelajar sepanjang hayat.'
+  },
+}
 const gallery = [
   ['Praktik Mengajar di Kelas', 'Praktik Mengajar', '/gallery/Praktik-mengajar.jpeg'],
   ['Bimbingan Reflektif dengan Guru Pamong', 'Bimbingan & Mentoring', '/gallery/Bimbingan.jpeg'],
@@ -95,10 +163,10 @@ function App() {
                 <img src="/profile-maswa.jpg" alt="Maswa Arbaurnika" />
                 <div className="photo-label">
                     <strong>PROFIL DIRI</strong>
-                <span>Kota Yogyakarta, Daerah Istimewa Yogyakarta</span>
+                <span>Kabupaten Sleman, Daerah Istimewa Yogyakarta</span>
                 </div>
             </div>
-        <div className="story-stack">kebaikan
+        <div className="story-stack">
             <Story title="Cerita Personal" label="INSPIRASI PENDIDIK">Terinspirasi dari seorang guru yang selalu menunjukkan ketulusan dan dedikasi dalam membantu peserta didik untuk berkembang, bukan sekedar memberikan materi tetapi,
               juga membimbing dan memberikan arahan serta dukungan yang dibutuhkan. Hal ini membuat saya ingin menjadi seorang guru yang dapat memberikan dampak
               positif bagi peserta didik dan membatu mereka mecapai potensi terbaik mereka.
@@ -185,7 +253,7 @@ function SectionTitle({ number, title, text }: { number: string; title: string; 
 function Story({ title, label, children }: { title: string; label: string; children: string }) { return <article className="story"><span>{label}</span><h3>{title}</h3><p>{children}</p></article> }
 function CourseDetail({ title, onBack }: { title: string; onBack: () => void }) {
   const course = courses.find((item) => item[0] === title)
-  const detail = journeyDetails[title]
+  const detail = courseDetailContent[title]
   if (!course || !detail) return null
   return <section className="course-detail page-width">
     <button className="back-button" onClick={onBack}><ArrowLeft size={16} /> Kembali ke daftar mata kuliah</button>
@@ -194,7 +262,7 @@ function CourseDetail({ title, onBack }: { title: string; onBack: () => void }) 
       <h1>{course[0]}</h1>
       <p>{course[1]}</p>
     </div>
-    <div className="detail-overview"><span>RANGKUMAN PEMBELAJARAN</span><strong>Konsep, praktik, dan refleksi dalam {course[0].toLowerCase()}.</strong></div>
+    <div className="detail-overview"><span>RANGKUMAN PEMBELAJARAN</span><strong>{detail.summary}</strong></div>
     <div className="detail-blocks">
       <article className="detail-block"><div className="detail-block-number">01</div><div><span className="detail-label">PEMBELAJARAN UTAMA</span><h2>Hal yang dipelajari</h2><ul>{detail.learning.map((item) => <li key={item}>{item}</li>)}</ul></div></article>
       <article className="detail-block"><div className="detail-block-number">02</div><div><span className="detail-label">KOMPETENSI</span><h2>Kemampuan yang berkembang</h2><div className="detail-tags">{detail.skills.map((item) => <span key={item}>{item}</span>)}</div></div></article>
