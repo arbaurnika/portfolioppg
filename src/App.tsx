@@ -16,18 +16,18 @@ const courses = [
   ['Projek Kepemimpinan', 'Proyek inovatif berbasis sekolah atau komunitas beserta evaluasinya.', 'Kepemimpinan', 'SEMESTER 2'],
   ['Pengembangan Keprofesian Berkelanjutan', 'Action plan pengembangan diri dan peta jalan profesional pasca PPG.', 'Refleksi', 'SEMESTER 2'],
 ]
-const artifactLinks: Record<string, string> = {
-  'Filosofi Pendidikan dan Pendidikan Nilai': '#',
-  'Peserta Didik dan Pemahamannya': '#',
-  'Pembelajaran Mendalam dan Asesmen Dasar': '#',
-  'Pengalaman Lapangan (PPL) Terbimbing': '#',
-  'Pola Pikir Bertumbuh (Growth Mindset)': '#',
-  'Pembelajaran Kreatif dan Inovatif': '#',
-  'Pembelajaran Sosial Emosional': '#',
-  'Pembelajaran Mendalam dan Asesmen Lanjut': '#',
-  'Praktik Pengalaman Lapangan Mandiri': '#',
-  'Projek Kepemimpinan': '#',
-  'Pengembangan Keprofesian Berkelanjutan': '#',
+const artifactLinks: Record<string, string | null> = {
+  'Filosofi Pendidikan dan Pendidikan Nilai': 'https://drive.google.com/file/d/1GUEGxU0yZ94sl68Kjg81FXoOzmJAQTjw/view?usp=sharing',
+  'Peserta Didik dan Pemahamannya': 'https://drive.google.com/file/d/1G0ewVMQ4_laNbtzn2EtcYVh_RoGpIG7k/view?usp=sharing',
+  'Pembelajaran Mendalam dan Asesmen Dasar': 'https://drive.google.com/file/d/1F_SixNXjE47T2GJMsxBtBbGaOLQ0BQGX/view?usp=sharing',
+  'Pengalaman Lapangan (PPL) Terbimbing': 'https://drive.google.com/file/d/1WtjtcIXF-asSthZYUvrcA-HlzQr1Dncv/view?usp=sharing',
+  'Pola Pikir Bertumbuh (Growth Mindset)': 'https://drive.google.com/file/d/109jFjCKF9SmYwwhSsMFs9f2Qc1IM7-AC/view?usp=sharing',
+  'Pembelajaran Kreatif dan Inovatif': 'https://drive.google.com/file/d/17hTBGudyRq4_-OVnwFhfygt8jLXIESrW/view?usp=sharing',
+  'Pembelajaran Sosial Emosional': 'https://drive.google.com/file/d/1rXRf5ME--KkmW83FekLRgt3-4izcUqDq/view?usp=sharing',
+  'Pembelajaran Mendalam dan Asesmen Lanjut': 'https://drive.google.com/file/d/1eNXlW2rF50xJGOAS-MOLRTU1aPymDfxI/view?usp=sharing',
+  'Praktik Pengalaman Lapangan Mandiri': null,
+  'Projek Kepemimpinan': 'https://drive.google.com/file/d/1AbqswMqESY-JF0wfUStRxN7U8zuaO4Zu/view?usp=sharing',
+  'Pengembangan Keprofesian Berkelanjutan': 'https://drive.google.com/file/d/1L3mcZE0_5Kx5kYnUP_Y8T_O-PNuOxgJo/view?usp=sharing',
 }
 const journeyDetails: Record<string, { learning: string[]; skills: string[]; reflection: string }> = {
   'Filosofi Pendidikan dan Pendidikan Nilai': { learning: ['Filosofi pendidikan', 'Pendidikan nilai', 'Landasan pemikiran pendidikan'], skills: ['Reflektif', 'Landasan pedagogis'], reflection: 'Pembelajaran menjadi lebih bermakna ketika pendidik memahami landasan dan esensi nilai dari pendidikan.' },
@@ -233,10 +233,14 @@ function App() {
       </section>
       <section className="artifact-section section-space page-width">
         <SectionTitle number="05" title="Bukti belajar yang dapat diverifikasi." text="Koleksi artifak menggunakan placeholder sampai file dan URL asli tersedia." />
-        <div className="artifact-list">{courses.map((course) => <div className="artifact-row" key={course[0]}>
+        <div className="artifact-list">{courses.map((course) => {
+          const artifactUrl = artifactLinks[course[0]]
+          return <div className="artifact-row" key={course[0]}>
             <span>{course[3]}</span>
-          <a href={artifactLinks[course[0]]} target="_blank" rel="noreferrer"><h3>{course[0]}</h3></a>
-          <a href={artifactLinks[course[0]]} target="_blank" rel="noreferrer" aria-label={`Buka artifak ${course[0]}`}><ArrowUpRight size={16} /></a></div>)}
+            {artifactUrl ? <a href={artifactUrl} target="_blank" rel="noopener noreferrer"><h3>{course[0]}</h3></a> : <h3 className="artifact-unavailable">{course[0]}</h3>}
+            {artifactUrl ? <a href={artifactUrl} target="_blank" rel="noopener noreferrer" aria-label={`Buka artifak ${course[0]}`}><ArrowUpRight size={16} /></a> : <span className="artifact-unavailable" aria-label={`Artifak ${course[0]} belum tersedia`}>-</span>}
+          </div>
+        })}
         </div>
       </section>
       <section id="kontak" className="contact-section page-width">
@@ -255,6 +259,7 @@ function CourseDetail({ title, onBack }: { title: string; onBack: () => void }) 
   const course = courses.find((item) => item[0] === title)
   const detail = courseDetailContent[title]
   if (!course || !detail) return null
+  const artifactUrl = artifactLinks[title]
   return <section className="course-detail page-width">
     <button className="back-button" onClick={onBack}><ArrowLeft size={16} /> Kembali ke daftar mata kuliah</button>
     <div className="course-detail-hero">
@@ -268,7 +273,7 @@ function CourseDetail({ title, onBack }: { title: string; onBack: () => void }) 
       <article className="detail-block"><div className="detail-block-number">02</div><div><span className="detail-label">KOMPETENSI</span><h2>Kemampuan yang berkembang</h2><div className="detail-tags">{detail.skills.map((item) => <span key={item}>{item}</span>)}</div></div></article>
       <article className="detail-block detail-reflection"><div className="detail-block-number">03</div><div><span className="detail-label">REFLEKSI</span><h2>Makna pengalaman</h2><p>{detail.reflection}</p></div></article>
     </div>
-    <div className="detail-artifact"><div><span className="detail-label">ARTIFAK PEMBELAJARAN</span><h2>Lihat bukti belajar</h2><p>Tambahkan link dokumen, video, atau portofolio untuk mata kuliah ini.</p></div><a href={artifactLinks[title]} target="_blank" rel="noreferrer">Lihat artifak <ExternalLink size={15} /></a></div>
+    <div className="detail-artifact"><div><span className="detail-label">ARTIFAK PEMBELAJARAN</span><h2>Lihat bukti belajar</h2><p>{artifactUrl ? 'Buka dokumen pendukung untuk mata kuliah ini.' : 'Dokumen pendukung untuk mata kuliah ini belum tersedia.'}</p></div>{artifactUrl ? <a href={artifactUrl} target="_blank" rel="noopener noreferrer">Lihat artifak <ExternalLink size={15} /></a> : <span className="artifact-action-disabled">Belum tersedia</span>}</div>
   </section>
 }
 export default App
