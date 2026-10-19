@@ -113,9 +113,7 @@ const courseDetailContent: Record<string, { summary: string; learning: string[];
 const gallery = [
   ['Praktik Mengajar di Kelas', 'Praktik Mengajar', '/gallery/Praktik-mengajar.jpeg'],
   ['Bimbingan Reflektif dengan Guru Pamong', 'Bimbingan & Mentoring', '/gallery/Bimbingan.jpeg'],
-  ['Bimbingan Akademik bersama Dosen Pembimbing', 'Bimbingan & Mentoring', '/gallery/Bimbingan-dengan-dosen.jpg'],
   ['Presentasi Produk Inovasi Pembelajaran', 'Presentasi & Inovasi', '/gallery/presentasi-siswa.jpeg'],
-  ['Upacara Penerjunan Mahasiswa PPL', 'PPL & Lapangan', '#'],
 ]
 
 function App() {
@@ -123,6 +121,9 @@ function App() {
   const [journeySemester, setJourneySemester] = useState('SEMESTER 1')
   const [openJourney, setOpenJourney] = useState(courses[0][0])
   const [selectedCourse, setSelectedCourse] = useState<string | null>(null)
+  const [innovationTab, setInnovationTab] = useState<'identitas' | 'riset' | 'rancangan' | 'evaluasi'>('identitas')
+  const [pplTab, setPplTab] = useState<'rancangan' | 'materi' | 'media' | 'video' | 'nonmengajar' | 'penilaian'>('rancangan')
+  const [energyBoost, setEnergyBoost] = useState(85)
   const [sent, setSent] = useState(false)
   const go = (id: string) => { document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }) }
   const openCourse = (title: string) => { setSelectedCourse(title); window.scrollTo({ top: 0, behavior: 'smooth' }) }
@@ -132,12 +133,12 @@ function App() {
       <span>PP</span>
       <strong>Portfolio.</strong>
       </button><nav className="main-nav" aria-label="Navigasi utama">
-        {[['beranda', 'Beranda'], ['tentang', 'Tentang Saya'], ['perjalanan', 'Perjalanan'], ['matakuliah', 'Mata Kuliah'], ['galeri', 'Galeri'], ['kontak', 'Kontak']].map(([id, label]) => <button key={id} onClick={() => go(id)}>{label}</button>)}</nav></header>
+        {[['beranda', 'Beranda'], ['tentang', 'Profil & Visi'], ['inovasi', 'Karya Inovasi'], ['ppl-mandiri', 'Praktik PPL'], ['matakuliah', 'Akademik'], ['galeri', 'Galeri'], ['artifak', 'Artifak'], ['kontak', 'Kontak']].map(([id, label]) => <button key={id} onClick={() => go(id)}>{label}</button>)}</nav></header>
     <main>{selectedCourse ? <CourseDetail title={selectedCourse} onBack={() => setSelectedCourse(null)} /> : <>
     <section id="beranda" className="landing-hero page-width">
     <div className="hero-orb" />
         <div className="hero-content">
-            <div className="micro-label">✧ PORTOFOLIO PROFESIONAL PPG</div>
+            <div className="micro-label">✧ PORTOFOLIO PROFESIONAL PPG CALON GURU</div>
             <h1>MASWA<br /><span>ARBAURNIKA</span></h1>
             <p>Senantiasa berupaya memberikan yang terbaik dan melampaui batas kemampuan diri demi kemuliaan Tuhan yang lebih besar.</p>
         <div className="hero-buttons">
@@ -146,7 +147,7 @@ function App() {
         </div>
             <div className="hero-values"><span><i className="green" /> Belajar</span><span><i className="gold" /> Bertumbuh</span><span><i className="slate" /> Bermanfaat</span></div>
         </div>
-            <div className="hero-card"><div className="hero-card-top"><span>PPG · 2026</span><span>◉</span></div>
+            <div className="hero-card"><div className="hero-card-top"><span>PPG CALON GURU · 2026</span><span>◉</span></div>
             <div className="hero-card-body"><span>MASWA ARBAURNIKA</span><strong>Calon Guru<br />Profesional</strong><small>“Terus belajar untuk bertumbuh, dan terus bertumbuh untuk menjadi pribadi yang bermanfaat bagi sesama.”</small></div>
         </div>
         </section>
@@ -184,9 +185,320 @@ function App() {
                 ['Kemerdekaan dan Pembebasan', 'Pendidikan adalah usaha "menuntun" tumbuh kembangnya kodrat anak agar mencapai keselamatan dan kebahagiaan setinggi-tingginya. Berlandaskan Sistem Among (Ing Ngarsa Sung Tulada, Ing Madya Mangun Karsa, Tut Wuri Handayani), guru bertindak sebagai pamong, bukan penguasa.']]
                 .map(([title, text]) => <div className="principle" key={title}><span>✦</span><h3>{title}</h3><p>{text}</p></div>)}</div>
         </section>
+      <section id="visi-rtl" className="vision-section section-space">
+        <div className="page-width">
+          <SectionTitle number="02" title="Visi Pendidikan & Rencana Tindak Lanjut" text="Pandangan transformatif mengenai arah pendidikan nasional, komitmen pengembangan profesional, serta tiga rencana aksi konkret saat memulai karier." />
+          
+          <div className="vision-card">
+            <span className="vision-badge">✦ TRANSFORMASI PENDIDIKAN NASIONAL</span>
+            <h3>Menuntun Kodrat, Merayakan Keberagaman, & Memanusiakan Manusia</h3>
+            <p>
+              Setelah menyelesaikan rangkaian Program PPG Calon Guru, saya memandang bahwa pendidikan di Indonesia harus bertransformasi dari sekadar proses transfer pengetahuan <em>(transfer of knowledge)</em> menjadi proses <strong>menuntun kodrat dan memanusiakan manusia</strong>. Pendidikan tidak boleh lagi menyeragamkan potensi anak melalui tolok ukur tunggal yang kaku. Ruang kelas di Indonesia harus menjadi ekosistem belajar yang merdeka, aman, inklusif, dan membahagiakan <em>(student well-being)</em>, di mana setiap anak dirayakan keunikannya melalui pembelajaran berdiferensiasi. Integrasi antara kecakapan berpikir kritis (HOTS), penguatan karakter budi pekerti luhur bangsa, serta kematangan sosial emosional (PSE) adalah kunci agar generasi muda Indonesia tumbuh cerdas secara intelektual, peka berempati, dan tangguh secara moral dalam menyongsong masa depan.
+            </p>
+          </div>
+
+          <div className="pro-steps-header">
+            <span className="micro-label">KOMITMEN BERKELANJUTAN</span>
+            <h3>4 Langkah Strategis Menjadi Guru Profesional</h3>
+          </div>
+          <div className="pro-steps-grid">
+            <div className="pro-step-card">
+              <div className="pro-step-top">
+                <span className="pro-step-num">LANGKAH 01</span>
+              </div>
+              <h4>Praktisi Reflektif Berkelanjutan (Reflective Practitioner)</h4>
+              <p>Membiasakan diri menulis jurnal refleksi seusai setiap siklus pembelajaran dan proaktif membuka ruang dialog evaluatif bersama rekan sejawat serta murid guna perbaikan mutu pedagogis secara konsisten.</p>
+            </div>
+
+            <div className="pro-step-card">
+              <div className="pro-step-top">
+                <span className="pro-step-num">LANGKAH 02</span>
+              </div>
+              <h4>Pembelajar Sepanjang Hayat (Lifelong Learner)</h4>
+              <p>Senantiasa meng-upgrade wawasan keilmuan, pedagogi modern, dan literasi digital melalui pelatihan mandiri, sertifikasi berkelanjutan, serta melaksanakan Penelitian Tindakan Kelas (PTK) berbasis dinamika nyata kelas.</p>
+            </div>
+
+            <div className="pro-step-card">
+              <div className="pro-step-top">
+                <span className="pro-step-num">LANGKAH 03</span>
+              </div>
+              <h4>Kolaborator Komunitas Praktisi (Community of Practice)</h4>
+              <p>Berperan aktif dalam forum MGMP/KKG, komunitas belajar sekolah, dan Platform Pembelajaran Guru untuk saling berbagi praktik baik (best practices) serta memecahkan problem pembelajaran secara kolektif.</p>
+            </div>
+
+            <div className="pro-step-card">
+              <div className="pro-step-top">
+                <span className="pro-step-num">LANGKAH 04</span>
+              </div>
+              <h4>Keteladanan Karakter Sistem Among (Ing Ngarsa Sung Tulada)</h4>
+              <p>Menginternalisasi nilai budi pekerti luhur sebagai teladan moral di depan, pembangkit karsa dan semangat di tengah (Ing Madya Mangun Karsa), serta pendorong kemandirian murid dari belakang (Tut Wuri Handayani).</p>
+            </div>
+          </div>
+
+          <div className="rtl-container">
+            <div className="rtl-header">
+              <span className="micro-label">RENCANA TINDAK LANJUT (RTL)</span>
+              <h3>Tiga Hal Penting Saat Mengawali Karier Sebagai Guru</h3>
+            </div>
+            <div className="rtl-grid">
+              <div className="rtl-card">
+                <span className="rtl-number-badge">01</span>
+                <span className="rtl-card-tag">Aksi Fondasi</span>
+                <h4>Asesmen Diagnostik & Pemetaan Kebutuhan Belajar Murid</h4>
+                <p>Mengawali tahun ajaran baru dengan asesmen diagnostik kognitif dan non-kognitif untuk memetakan kesiapan, minat, gaya belajar, serta latar sosio-emosional murid sebagai basis penyusunan Modul Ajar berdiferensiasi yang inklusif.</p>
+              </div>
+
+              <div className="rtl-card">
+                <span className="rtl-number-badge">02</span>
+                <span className="rtl-card-tag">Aksi Iklim Kelas</span>
+                <h4>Membangun Budaya Kelas Positif & Terintegrasi PSE</h4>
+                <p>Merumuskan kesepakatan kelas yang aman, adil, dan suportif bersama murid, serta mengintegrasikan 5 Kompetensi Sosial Emosional (KSE CASEL) ke dalam proses belajar agar tercipta iklim kelas yang bebas dari perundungan.</p>
+              </div>
+
+              <div className="rtl-card">
+                <span className="rtl-number-badge">03</span>
+                <span className="rtl-card-tag">Aksi Ekosistem</span>
+                <h4>Menginisiasi Kolaborasi Segitiga Emas (Sekolah - Ortu - Mitra)</h4>
+                <p>Membangun kemitraan komunikasi dua arah secara berkala dengan orang tua/wali murid serta berkolaborasi erat dengan Kepala Sekolah, rekan guru pamong, dan konselor sekolah untuk menjamin kesinambungan ekosistem belajar anak.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="inovasi" className="innovation-section section-space">
+        <div className="page-width">
+          <SectionTitle number="03" title="Karya Inovasi Pembelajaran: AktifClass" text="Aplikasi web interaktif untuk mentransformasi dinamika kelas, memberdayakan siswa pemalu, dan memicu keterlibatan aktif melalui gamifikasi kolaboratif." />
+          
+          <div className="innovation-hero-card">
+            <div className="innovation-badge-group">
+              <span className="innovation-badge">✦ WEB-BASED APPLICATION</span>
+              <span className="innovation-badge accent">GAMIFIKASI PEMBELAJARAN</span>
+              <span className="innovation-badge">INKLUSIVITAS KELAS</span>
+              <span className="innovation-badge">PSYCHOLOGICAL SAFETY</span>
+            </div>
+            <h3>AktifClass: Platform Interaktif Peningkat Partisipasi & Keterlibatan Siswa</h3>
+            <p className="lead">
+              AktifClass dirancang khusus untuk mengatasi problem klasik di ruang kelas: ketimpangan partisipasi di mana hanya segelintir siswa vokal yang aktif berbicara, sementara siswa pemalu atau pasif merasa ragu dan takut dihakimi. Melalui integrasi fitur <em>Buzzer</em>, <em>Estafet Tantangan</em>, <em>Wall of Argument (Mode Anonim)</em>, <em>Randomizer</em>, dan <em>Class Energy Meter</em>, AktifClass menciptakan ruang belajar yang inklusif, adil, dan memotivasi seluruh murid secara kolektif.
+            </p>
+
+            <div className="innovation-tabs" role="tablist">
+              {(
+                [
+                  ['identitas', '01 · Identitas Karya'],
+                  ['riset', '02 · Gagasan & Riset'],
+                  ['rancangan', '03 · Rancangan & Fitur'],
+                  ['evaluasi', '04 · Evaluasi 3 Dimensi'],
+                ] as const
+              ).map(([key, label]) => (
+                <button
+                  key={key}
+                  role="tab"
+                  aria-selected={innovationTab === key}
+                  className={`innovation-tab-btn ${innovationTab === key ? 'active' : ''}`}
+                  onClick={() => setInnovationTab(key)}
+                >
+                  {label}
+                </button>
+              ))}
+            </div>
+
+            <div className="innovation-tab-panel">
+              {innovationTab === 'identitas' && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="tab-content-grid">
+                  <div className="feature-box">
+                    <div className="feature-box-top"><span className="feature-tag">Profil Karya</span></div>
+                    <h5>Nama & Format Inovasi</h5>
+                    <p><strong>Nama:</strong> AktifClass (Interactive Classroom Engagement System)</p>
+                    <p><strong>Platform:</strong> Aplikasi Web Responsif (dapat diakses via browser HP/Laptop tanpa instalasi rumit).</p>
+                    <p><strong>Pengembang:</strong> Maswa Arbaurnika (PPG Calon Guru 2026).</p>
+                  </div>
+                  <div className="feature-box">
+                    <div className="feature-box-top"><span className="feature-tag">Target & Sasaran</span></div>
+                    <h5>Sasaran Inovasi Pembelajaran</h5>
+                    <p><strong>Pengguna Utama:</strong> Peserta didik dalam pembelajaran kolaboratif dan diskusi kelompok.</p>
+                    <p><strong>Fokus Sasaran:</strong> Mengakomodasi siswa pasif, pemalu, atau introvert yang memiliki hambatan kecemasan sosial saat berbicara langsung di depan kelas.</p>
+                    <p><strong>Output:</strong> Terwujudnya pemerataan keaktifan dan lingkungan belajar yang ramah serta aman secara psikologis.</p>
+                  </div>
+                </motion.div>
+              )}
+
+              {innovationTab === 'riset' && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="tab-content-grid">
+                  <div className="feature-box">
+                    <div className="feature-box-top"><span className="feature-tag">Tantangan Kelas</span></div>
+                    <h5>Tantangan Nyata di Ruang Kelas</h5>
+                    <p>• <strong>Dominasi Minoritas:</strong> Hanya 2–3 siswa vokal yang selalu aktif, membuat murid lain merasa tidak memiliki ruang atau kesempatan.</p>
+                    <p>• <strong>Kecemasan Berbicara (Speaking Anxiety):</strong> Takut salah, malu ditertawakan teman, atau cemas dihakimi saat menjawab pertanyaan guru.</p>
+                    <p>• <strong>Penunjukan Manual yang Menegangkan:</strong> Cara guru menunjuk murid secara acak sering memicu kepanikan alih-alih keterlibatan belajar yang bermakna.</p>
+                  </div>
+                  <div className="feature-box">
+                    <div className="feature-box-top"><span className="feature-tag">Gagasan & Landasan Teori</span></div>
+                    <h5>Gagasan Solusi & Basis Riset</h5>
+                    <p>• <strong>Psychological Safety (Amy Edmondson):</strong> Pembelajaran efektif hanya terwujud jika murid merasa aman mengambil risiko akademis tanpa ancaman penghakiman sosial—diakomodasi melalui <em>Mode Anonim</em>.</p>
+                    <p>• <strong>Gamifikasi Kolaboratif (Deterding et al.):</strong> Mengubah poin individu menjadi akumulasi <em>Energi Kelas Kolektif</em>, sehingga seluruh murid merasa menjadi satu tim yang saling mendukung.</p>
+                  </div>
+                </motion.div>
+              )}
+
+              {innovationTab === 'rancangan' && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="tab-content-single">
+                  <div className="features-detail-grid">
+                    <div className="feature-box">
+                      <div className="feature-box-top"><span className="feature-tag">Fitur 01</span></div>
+                      <h5>🔔 Digital Buzzer (Angkat Tangan Cepat)</h5>
+                      <p>Tombol interaktif real-time untuk merespons pertanyaan guru secara cepat dan tercatat transparan, menghilangkan perdebatan siapa yang angkat tangan pertama kali.</p>
+                    </div>
+                    <div className="feature-box">
+                      <div className="feature-box-top"><span className="feature-tag">Fitur 02</span></div>
+                      <h5>🎯 Estafet Tantangan Antar-Kelompok</h5>
+                      <p>Mekanisme dinamis di mana suatu kelompok dapat melempar pertanyaan kasus atau tantangan materi ke kelompok lain, melatih nalar kritis dan komunikasi sejawat.</p>
+                    </div>
+                    <div className="feature-box">
+                      <div className="feature-box-top"><span className="feature-tag">Fitur 03</span></div>
+                      <h5>💬 Wall of Argument & Mode Anonim</h5>
+                      <p>Ruang berekspresi tertulis di mana murid dapat saling menyukai (like) argumen terbaik, dilengkapi opsi <em>Anonim</em> untuk melindungi kenyamanan siswa pemalu.</p>
+                    </div>
+                    <div className="feature-box">
+                      <div className="feature-box-top"><span className="feature-tag">Fitur 04</span></div>
+                      <h5>🎲 Acak Perwakilan Kelompok (Randomizer)</h5>
+                      <p>Algoritma pemilih acak perwakilan presentasi agar seluruh anggota kelompok siap memahami materi dan tidak selalu mengandalkan ketua kelompok.</p>
+                    </div>
+                    <div className="feature-box">
+                      <div className="feature-box-top"><span className="feature-tag">Fitur 05</span></div>
+                      <h5>⚡ Class Energy Meter (Energi Kelas)</h5>
+                      <p>Indikator energi kelas yang terus bertambah seiring keaktifan murid merespons, menjawab tantangan, dan berargumen, memicu antusiasme kolektif seluruh kelas.</p>
+                    </div>
+                  </div>
+
+                  <div className="energy-meter-preview">
+                    <div className="energy-meter-header">
+                      <span>⚡ SIMULASI TINGKAT ENERGI KEAKTIFAN KELAS: {energyBoost}%</span>
+                      <button
+                        onClick={() => setEnergyBoost((prev) => (prev >= 100 ? 70 : prev + 5))}
+                        style={{ background: '#f5a080', border: 'none', padding: '6px 12px', borderRadius: '3px', color: '#1c2024', fontWeight: 800, fontSize: '11px', cursor: 'pointer' }}
+                      >
+                        🔔 Tekan Buzzer (+5 Energy)
+                      </button>
+                    </div>
+                    <div className="energy-meter-track">
+                      <div className="energy-meter-fill" style={{ width: `${Math.min(energyBoost, 100)}%` }} />
+                    </div>
+                    <small style={{ color: '#b9d0c8', fontSize: '11px' }}>Uji coba interaktif: Klik tombol buzzer di atas untuk melihat peningkatan bar energi keaktifan kelas!</small>
+                  </div>
+                </motion.div>
+              )}
+
+              {innovationTab === 'evaluasi' && (
+                <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="eval-pillars-grid">
+                  <div className="eval-card">
+                    <div className="eval-card-top">
+                      <span className="eval-card-icon">✦</span>
+                      <span className="eval-card-tag">DIMENSI 01</span>
+                    </div>
+                    <h4>Kebaruan (Novelty)</h4>
+                    <p>Menggantikan pencatatan keaktifan manual dengan ekosistem gamifikasi berbasis energi kolektif kelas, serta menyediakan fitur pelindung rasa nyaman (Mode Anonim) yang jarang ditemukan di aplikasi kelas konvensional.</p>
+                  </div>
+                  <div className="eval-card">
+                    <div className="eval-card-top">
+                      <span className="eval-card-icon">💡</span>
+                      <span className="eval-card-tag">DIMENSI 02</span>
+                    </div>
+                    <h4>Kreativitas (Creativity)</h4>
+                    <p>Mengintegrasikan dinamika <em>game-show</em> (buzzer & estafet tantangan) dengan prinsip Pembelajaran Sosial Emosional (PSE). Belajar terasa menyenangkan <em>(joyful learning)</em> tanpa unsur intimidasi.</p>
+                  </div>
+                  <div className="eval-card">
+                    <div className="eval-card-top">
+                      <span className="eval-card-icon">📈</span>
+                      <span className="eval-card-tag">DIMENSI 03</span>
+                    </div>
+                    <h4>Kebermanfaatan (Impact)</h4>
+                    <p>Tingkat keterlibatan murid pasif meningkat signifikan. Siswa pemalu mulai berani mengungkapkan gagasan bernalar kritis, dan tercipta rasa saling menghargai antar-kelompok dalam menyelesaikan tantangan materi.</p>
+                  </div>
+                </motion.div>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="ppl-mandiri" className="ppl-section section-space">
+        <div className="page-width">
+          <SectionTitle number="04" title="Praktik Pengalaman Lapangan (PPL) Mandiri" text="Fokus analisis klinis dan refleksi kritis pelaksanaan praktik mengajar mandiri di sekolah mitra." />
+          
+          <div className="ppl-shell">
+            <div className="ppl-tabs-grid" role="tablist" aria-label="Pilih fokus analisis PPL mandiri">
+              {(
+                [
+                  ['rancangan', '📋', 'Rancangan', 'Perencanaan Modul Ajar'],
+                  ['materi', '📚', 'Materi Ajar', 'Analisis Bahan Pembelajaran'],
+                  ['media', '🎨', 'Media Ajar', 'Media & Alat Bantu Belajar'],
+                  ['video', '🎥', 'Video Praktik', 'Rekaman Mengajar Mandiri'],
+                  ['nonmengajar', '🏫', 'Non-Mengajar', 'Kegiatan & Tugas Sekolah'],
+                  ['penilaian', '📊', 'Penilaian', 'Instrumen & Analisis Hasil'],
+                ] as const
+              ).map(([key, icon, label]) => (
+                <button
+                  key={key}
+                  role="tab"
+                  aria-selected={pplTab === key}
+                  className={`ppl-tab-btn ${pplTab === key ? 'active' : ''}`}
+                  onClick={() => setPplTab(key)}
+                >
+                  <span className="ppl-tab-icon">{icon}</span>
+                  <span className="ppl-tab-title">{label}</span>
+                </button>
+              ))}
+            </div>
+
+            <div className="ppl-panel">
+              <motion.div key={pplTab} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="ppl-placeholder-content">
+                <span className="ppl-placeholder-badge">✦ 04 · FOKUS ANALISIS KLINIS PPL MANDIRI</span>
+                {pplTab === 'rancangan' && (
+                  <>
+                    <h4>Analisis Produk Rancangan / Perencanaan Pembelajaran</h4>
+                    <p>Fokus evaluasi modul ajar, penerapan prinsip Understanding by Design (UbD), dan kesesuaian pembelajaran berdiferensiasi.</p>
+                  </>
+                )}
+                {pplTab === 'materi' && (
+                  <>
+                    <h4>Analisis Materi Pembelajaran yang Disusun & Diterapkan</h4>
+                    <p>Fokus evaluasi kedalaman bahan ajar, kontekstualisasi materi lokal, dan penguatan literasi-numerasi murid.</p>
+                  </>
+                )}
+                {pplTab === 'media' && (
+                  <>
+                    <h4>Analisis Media Pembelajaran yang Dipergunakan</h4>
+                    <p>Fokus evaluasi efektivitas alat peraga, media digital, dan interaktivitas media dalam merangsang atensi kelas.</p>
+                  </>
+                )}
+                {pplTab === 'video' && (
+                  <>
+                    <h4>Analisis Video Pelaksanaan Praktik Mengajar Mandiri</h4>
+                    <p>Fokus evaluasi rekaman video mengajar, sintaks pembelajaran nyata, alokasi waktu, dan dinamika interaksi guru-murid.</p>
+                  </>
+                )}
+                {pplTab === 'nonmengajar' && (
+                  <>
+                    <h4>Analisis Kegiatan Non-Mengajar di Sekolah Mitra</h4>
+                    <p>Fokus dokumentasi peran guru dalam tugas non-mengajar (piket harian, upacara, pembinaan ekstrakurikuler, dan administrasi sekolah).</p>
+                  </>
+                )}
+                {pplTab === 'penilaian' && (
+                  <>
+                    <h4>Instrumen Penilaian yang Dirancang beserta Analisisnya</h4>
+                    <p>Fokus evaluasi kisi-kisi asesmen diagnostik, formatif, sumatif, rubrik ketercapaian, dan analisis ketuntasan hasil belajar.</p>
+                  </>
+                )}
+                <div className="ppl-placeholder-card">
+                  <p><strong>Status Bagian:</strong> Tombol pilar telah aktif dan tertata rapi. Konten uraian analisis mendalam dan dokumen pendukung siap ditambahkan.</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section id="perjalanan" className="journey-section section-space">
         <div className="page-width">
-            <SectionTitle number="02" title="Perjalanan akademik menuju pertumbuhan profesional." text="Setiap pengalaman menjadi ruang untuk mempelajari konsep, mencoba praktik, lalu merefleksikan perbaikan." />
+            <SectionTitle number="05" title="Perjalanan akademik menuju pertumbuhan profesional." text="Setiap pengalaman menjadi ruang untuk mempelajari konsep, mencoba praktik, lalu merefleksikan perbaikan." />
             <div className="journey-switcher" role="tablist" aria-label="Pilih semester perjalanan akademik">
               {['SEMESTER 1', 'SEMESTER 2'].map((item) => <button key={item} role="tab" aria-selected={journeySemester === item} className={journeySemester === item ? 'active' : ''} onClick={() => { setJourneySemester(item); setOpenJourney(courses.find((course) => course[3] === item)?.[0] ?? '') }}>{item.replace('SEMESTER ', 'Semester ')}</button>)}
             </div>
@@ -209,7 +521,7 @@ function App() {
             </div>
       </section>
       <section id="matakuliah" className="courses-section section-space page-width">
-        <SectionTitle number="03" title="Refleksi mata kuliah yang menunjukkan proses." text="Konsep diterjemahkan menjadi rancangan, praktik, dan refleksi dalam setiap pengalaman akademik." />
+        <SectionTitle number="06" title="Refleksi mata kuliah yang menunjukkan proses." text="Konsep diterjemahkan menjadi rancangan, praktik, dan refleksi dalam setiap pengalaman akademik." />
         <div className="course-switcher">{['Semua', 'SEMESTER 1', 'SEMESTER 2'].map((item) => <button key={item} className={semester === item ? 'active' : ''} onClick={() => setSemester(item)}>{item}</button>)}</div>
         <div className="course-grid">{filteredCourses.map((course, index) => <motion.article layout className="course-card" key={course[0]}>
             <div className="course-index">{String(index + 1).padStart(2, '0')}</div>
@@ -222,7 +534,7 @@ function App() {
         </section>
       <section id="galeri" className="gallery-section section-space">
         <div className="page-width">
-            <SectionTitle number="04" title="Dokumentasi kegiatan & praktik." text="Rekaman visual pengalaman nyata, praktik mengajar di kelas, bimbingan reflektif, serta pengimbasan inovasi pembelajaran." />
+            <SectionTitle number="07" title="Dokumentasi kegiatan & praktik." text="Rekaman visual pengalaman nyata, praktik mengajar di kelas, bimbingan reflektif, serta pengimbasan inovasi pembelajaran." />
             <div className="gallery-grid">{gallery.map((item, index) => <motion.article whileHover={{ y: -5 }} key={item[0]} className={`gallery-card gallery-${index + 1}`}>
                 <img src={item[2]} alt={item[0]} />
                 <div><span>{item[1]}</span>
@@ -231,8 +543,8 @@ function App() {
                 </motion.article>)}</div>
         </div>
       </section>
-      <section className="artifact-section section-space page-width">
-        <SectionTitle number="05" title="Bukti belajar yang dapat diverifikasi." text="Koleksi artifak menggunakan placeholder sampai file dan URL asli tersedia." />
+      <section id="artifak" className="artifact-section section-space page-width">
+        <SectionTitle number="08" title="Bukti belajar yang dapat diverifikasi." text="Koleksi artifak resmi mata kuliah yang terdokumentasi dan dapat diakses." />
         <div className="artifact-list">{courses.map((course) => {
           const artifactUrl = artifactLinks[course[0]]
           return <div className="artifact-row" key={course[0]}>
@@ -250,10 +562,22 @@ function App() {
         <form onSubmit={(event) => { event.preventDefault(); setSent(true) }}>{sent ? <div className="sent-state"><Check size={24} />
         <h3>Pesan terkirim.</h3>
         <p>Terima kasih. Saya akan segera menghubungi Anda.</p></div> : <><input required placeholder="Nama" /><input required type="email" placeholder="Email" /><input required placeholder="Subjek" /><textarea required rows={4} placeholder="Pesan" /><button className="primary-button" type="submit">Kirim pesan <ArrowUpRight size={17} /></button></>}</form></section>
-    </>}</main><footer className="page-width footer"><div><strong>Maswa Arbaurnika</strong><span>Calon Guru Profesional · Portofolio PPG</span></div><span>© 2026 · Maswa Arbaurnika</span><div className="footer-links"><a href="mailto:maswaarbaurnika@gmail.com">Email</a><a href="#linkedin">LinkedIn</a><a href="#github">GitHub</a></div></footer>
+    </>}</main><footer className="page-width footer"><div><strong>Maswa Arbaurnika</strong><span>Calon Guru Profesional · Portofolio PPG Calon Guru</span></div><span>© 2026 · Maswa Arbaurnika</span><div className="footer-links"><a href="mailto:maswaarbaurnika@gmail.com">Email</a><a href="#linkedin">LinkedIn</a><a href="#github">GitHub</a></div></footer>
   </div>
 }
-function SectionTitle({ number, title, text }: { number: string; title: string; text: string }) { return <div className="section-title"><div className="micro-label">{number} · {number === '01' ? 'TENTANG SAYA' : number === '02' ? 'PERJALANAN' : number === '03' ? 'MATA KULIAH' : number === '04' ? 'GALERI DOKUMENTASI' : 'ARTIFAK'}</div><h2>{title}</h2><p>{text}</p></div> }
+function SectionTitle({ number, title, text }: { number: string; title: string; text: string }) {
+  const labels: Record<string, string> = {
+    '01': 'TENTANG SAYA',
+    '02': 'VISI & TINDAK LANJUT',
+    '03': 'KARYA INOVASI UNGGULAN',
+    '04': 'PRAKTIK PPL MANDIRI',
+    '05': 'PERJALANAN AKADEMIK',
+    '06': 'MATA KULIAH',
+    '07': 'GALERI DOKUMENTASI',
+    '08': 'ARTIFAK BUKTI BELAJAR',
+  }
+  return <div className="section-title"><div className="micro-label">{number} · {labels[number] ?? 'PORTOFOLIO'}</div><h2>{title}</h2><p>{text}</p></div>
+}
 function Story({ title, label, children }: { title: string; label: string; children: string }) { return <article className="story"><span>{label}</span><h3>{title}</h3><p>{children}</p></article> }
 function CourseDetail({ title, onBack }: { title: string; onBack: () => void }) {
   const course = courses.find((item) => item[0] === title)

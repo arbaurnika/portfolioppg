@@ -1,25 +1,25 @@
 # Product Requirement Document (PRD)
-# Web Portofolio Guru Profesional PPG Prajabatan
+# Web Portofolio Guru Profesional PPG Calon Guru
 
 | Metadata | Keterangan |
 | :--- | :--- |
-| **Nama Proyek** | Web Portofolio PPG Prajabatan |
+| **Nama Proyek** | Web Portofolio PPG Calon Guru |
 | **Pemilik Portofolio** | **Maswa Arbaurnika** |
-| **Peran / Status** | Calon Guru Profesional — PPG Prajabatan 2026 |
-| **Institusi / Bidang** | Pendidikan Profesi Guru (PPG) Prajabatan |
-| **Versi Dokumen** | v1.0.0 |
-| **Status Dokumen** | Approved / Living Document |
-| **Tanggal Pembuatan** | Oktober 2026 |
+| **Peran / Status** | Calon Guru Profesional — PPG Calon Guru 2026 |
+| **Institusi / Bidang** | Pendidikan Profesi Guru (PPG) Calon Guru |
+| **Versi Dokumen** | v1.3.0 |
+| **Status Dokumen** | Active & Living Document (Updated with PPL Mandiri Hub) |
+| **Terakhir Diperbarui** | Oktober 2026 |
 
 ---
 
 ## 1. Pendahuluan & Visi Produk
 
 ### 1.1 Latar Belakang
-Program Pendidikan Profesi Guru (PPG) Prajabatan mewajibkan setiap calon guru untuk menyusun portofolio digital komprehensif sebagai instrumen penilaian Uji Kompetensi Mahasiswa PPG (UKMPPG). Portofolio ini tidak sekadar menjadi etalase dokumen administratif, melainkan media refleksi kritis yang membuktikan transformasi kompetensi pedagogik, kepribadian, sosial, dan profesional mahasiswa selama menjalani perkuliahan dan Praktik Pengalaman Lapangan (PPL).
+Program Pendidikan Profesi Guru (PPG) Calon Guru mewajibkan setiap calon guru untuk menyusun portofolio digital komprehensif sebagai instrumen penilaian Uji Kompetensi Mahasiswa PPG (UKMPPG). Portofolio ini tidak sekadar menjadi etalase dokumen administratif, melainkan media refleksi kritis yang membuktikan transformasi kompetensi pedagogik, kepribadian, sosial, dan profesional mahasiswa selama perkuliahan, PPL Terbimbing, PPL Mandiri, serta karya inovasi pembelajaran.
 
 ### 1.2 Visi Produk
-Menghadirkan platform web portofolio digital yang estetik, modern, cepat, dan mudah diverifikasi yang mempresentasikan identitas, filosofi pendidikan, rekam jejak akademik, karya nyata (artifak modul dan asesmen), serta dokumentasi praktik lapangan calon guru profesional secara kredibel dan terstruktur.
+Menghadirkan platform web portofolio digital yang estetik, modern, cepat, dan mudah diverifikasi yang mempresentasikan identitas, filosofi pendidikan, visi transformatif pendidikan nasional, karya inovasi digital unggulan (*AktifClass*), rekam jejak praktik klinis PPL Mandiri (6 pilar analisis), rekam jejak akademik, artifak modul ajar, serta dokumentasi praktik lapangan calon guru profesional secara kredibel dan terstruktur.
 
 ### 1.3 Nilai Inti & Filosofi
 * **Belajar**: Menjadi pembelajar sepanjang hayat (*lifelong learner*) yang senantiasa terbuka pada kritik dan evaluasi.
@@ -39,18 +39,18 @@ pie title Distribusi Pengguna Sasaran
 ```
 
 ### Persona 1: Dr. Budi Santoso (Asesor / Penguji UKMPPG)
-- **Tujuan**: Memverifikasi pemenuhan standar kompetensi lulusan PPG melalui dokumen artifak (Modul Ajar, Asesmen HOTS, Jurnal Refleksi, Projek Kepemimpinan).
-- **Kebutuhan**: Navigasi cepat per semester, tautan dokumen yang valid dan langsung dapat dibuka di Google Drive, kejelasan sintaks refleksi model Gibbs atau ALACT.
-- **Pain Point**: Link dokumen rusak/404, navigasi membingungkan, dokumen tidak terstruktur rapi per mata kuliah.
+- **Tujuan**: Memverifikasi pemenuhan standar kompetensi lulusan PPG Calon Guru melalui dokumen artifak, modul ajar, refleksi, karya inovasi pembelajaran (*AktifClass*), dan rekam jejak klinis PPL Mandiri (6 pilar).
+- **Kebutuhan**: Navigasi cepat tanpa sesak, tautan dokumen valid di Google Drive, kejelasan sintaks refleksi mendalam, bukti karya inovasi, dan telaah analitis PPL Mandiri.
+- **Pain Point**: Link dokumen rusak/404, ketiadaan refleksi akhir/RTL, navigasi berantakan.
 
 ### Persona 2: Ibu Rahayu, M.Pd (Guru Pamong & Dosen Pembimbing)
-- **Tujuan**: Meninjau perkembangan mahasiswa selama asistensi mengajar, pelaksanaan PPL terbimbing hingga mandiri.
-- **Kebutuhan**: Melihat dokumentasi visual kegiatan kelas, modul ajar kontekstual, dan refleksi bimbingan.
-- **Pain Point**: Foto dokumentasi tidak memiliki konteks atau resolusi buruk.
+- **Tujuan**: Meninjau perkembangan mahasiswa selama asistensi mengajar, pelaksanaan PPL terbimbing, hingga mandiri dan implementasi 6 aspek pembelajaran di kelas.
+- **Kebutuhan**: Melihat dokumentasi visual kegiatan kelas, modul ajar kontekstual, video praktik mengajar, dan instrumen asesmen.
+- **Pain Point**: Foto dokumentasi tidak memiliki konteks atau gambar rusak.
 
 ### Persona 3: Bapak Hendra (Kepala Sekolah Calon Pengguna Lulusan)
-- **Tujuan**: Merekrut guru baru yang memiliki karakter unggul, kemampuan pedagogik adaptif, dan kepemimpinan pembelajaran.
-- **Kebutuhan**: Memahami filosofi mengajar, etos kerja, kemampuan mengintegrasikan teknologi dan PSE (Pembelajaran Sosial Emosional), serta kontak yang mudah dihubungi.
+- **Tujuan**: Merekrut guru baru yang memiliki karakter unggul, kemampuan pedagogik adaptif, penguasaan teknologi pembelajaran digital, dan kepemimpinan kelas nyata.
+- **Kebutuhan**: Memahami filosofi mengajar, visi transformasi pendidikan, kemampuan integrasi PSE dan gamifikasi (*AktifClass*), serta rekam jejak tugas non-mengajar di sekolah.
 - **Pain Point**: Tidak adanya kontak langsung atau profil yang terkesan kaku/generik.
 
 ---
@@ -64,12 +64,22 @@ graph TD
     Root["Landing Page Root (/)"]
     
     Root --> H["01. Beranda / Hero"]
-    Root --> T["02. Tentang Saya & Filosofi"]
-    Root --> P["03. Perjalanan Akademik (Timeline)"]
-    Root --> M["04. Mata Kuliah & Refleksi"]
-    Root --> G["05. Galeri Dokumentasi Praktik"]
-    Root --> A["06. Artifak Pembelajaran Terverifikasi"]
-    Root --> K["07. Kontak & Footer"]
+    Root --> T["02. Tentang Saya (Identitas & Filosofi)"]
+    Root --> V["03. Visi Pendidikan & Rencana Tindak Lanjut (RTL)"]
+    Root --> I["04. Karya Inovasi Unggulan (AktifClass)"]
+    Root --> PPL["05. Praktik Pengalaman Lapangan (PPL) Mandiri"]
+    Root --> P["06. Perjalanan Akademik (Timeline S1 & S2)"]
+    Root --> M["07. Mata Kuliah & Refleksi"]
+    Root --> G["08. Galeri Dokumentasi Praktik"]
+    Root --> A["09. Artifak Pembelajaran Terverifikasi"]
+    Root --> K["10. Kontak & Footer"]
+    
+    PPL --> PPL1["1. Rancangan Modul Ajar"]
+    PPL --> PPL2["2. Materi Pembelajaran"]
+    PPL --> PPL3["3. Media Pembelajaran"]
+    PPL --> PPL4["4. Video Praktik Mengajar"]
+    PPL --> PPL5["5. Kegiatan Non-Mengajar"]
+    PPL --> PPL6["6. Instrumen Penilaian & Analisis"]
     
     M -->|"Lihat Detail"| CD["Halaman / Modal Detail Mata Kuliah"]
     CD --> CD1["Rangkuman Pembelajaran"]
@@ -84,108 +94,77 @@ graph TD
 
 ## 4. Spesifikasi Fitur Fungsional
 
-### 4.1 F-01: Header & Navigasi Utama
-- **Deskripsi**: Bilah navigasi melayang (*sticky header*) dengan efek *backdrop blur* yang konsisten di semua viewport.
-- **Komponen**:
-  - Logo/Inisial identitas (`PP Portfolio.`).
-  - Menu anchor link: Beranda, Tentang Saya, Perjalanan, Mata Kuliah, Galeri, Kontak.
-- **Perilaku**: Klik menu memicu pengguliran halus (*smooth scroll*) ke elemen ID target. Responsif pada perangkat mobile dengan navigasi horizontal yang dapat digeser.
+### 4.1 F-01: Header & Navigasi Utama Terkonsolidasi
+- **Deskripsi**: Bilah navigasi melayang (*sticky header*) dengan efek *backdrop blur* yang telah dirampingkan menjadi 8 tombol konsolidasi yang tidak membuat navbar kepenuhan:
+  1. `Beranda` (`#beranda`)
+  2. `Profil & Visi` (`#tentang` -> memuat profil & visi RTL)
+  3. `Karya Inovasi` (`#inovasi`)
+  4. `Praktik PPL` (`#ppl-mandiri`)
+  5. `Akademik` (`#matakuliah`)
+  6. `Galeri` (`#galeri`)
+  7. `Artifak` (`#artifak`)
+  8. `Kontak` (`#kontak`)
+- **Perilaku**: Smooth scroll ke target section ID; responsif dengan tab geser horizontal pada mobile screen.
 
 ### 4.2 F-02: Hero Section (Identitas Utama)
-- **Deskripsi**: Area pembuka berlatar kontras tinggi yang menampilkan identitas dan proposisi nilai.
-- **Elemen**:
-  - Badge micro-label: `✧ PORTOFOLIO PROFESIONAL PPG`.
-  - Judul nama: `MASWA ARBAURNIKA`.
-  - Tagline personal: Nilai pengabdian dan komitmen belajar.
-  - Kartu Profil Ringkas (*Hero Floating Card*): Status "Calon Guru Profesional · PPG 2026" beserta kutipan motivasi.
-  - CTA Button: "Jelajahi Portofolio" (scroll ke Tentang Saya).
+- **Elemen**: Badge micro-label `✧ PORTOFOLIO PROFESIONAL PPG CALON GURU`, nama Maswa Arbaurnika, tagline personal, kartu status "Calon Guru Profesional · PPG Calon Guru 2026", serta tombol aksi CTA.
 
-### 4.3 F-03: Tentang Saya & Filosofi Pendidikan
-- **Deskripsi**: Menghadirkan narasi latar belakang, panggilan jiwa, dan prinsip pedagogis.
-- **Komponen**:
-  - Foto profil resmi berukuran proporsional dengan label domisili (Kabupaten Sleman, D.I. Yogyakarta).
-  - Narasi Inspirasi Pendidik (Cerita personal ketulusan guru panutan).
-  - Motivasi Menjadi Guru (Panggilan menjadi pembelajar seumur hidup).
-  - Grid 3 Pilar Filosofi:
-    1. *Karakter dan Kebenaran* (Prinsip Sokrates / dialogis).
-    2. *Pengalaman dan Kebebasan* (Prinsip Rousseau / kebaikan kodrat anak).
-    3. *Kemerdekaan dan Pembebasan* (Sistem Among Ki Hajar Dewantara: Ing Ngarsa Sung Tulada, Ing Madya Mangun Karsa, Tut Wuri Handayani).
+### 4.3 F-03: Tentang Saya & Filosofi Pendidikan (Seksi 01)
+- **Komponen**: Foto profil resmi, domisili Sleman D.I. Yogyakarta, kisah personal inspirasi pendidik, motivasi menjadi guru, dan 3 pilar filosofi (Sokrates, Rousseau, dan Sistem Among Ki Hajar Dewantara).
 
-### 4.4 F-04: Perjalanan Akademik (Timeline & Accordion)
-- **Deskripsi**: Jejak langkah perkuliahan yang dikelompokkan berdasarkan semester.
-- **Interaksi**:
-  - Tab Switcher: Pilihan `Semester 1` (5 Mata Kuliah) dan `Semester 2` (6 Mata Kuliah).
-  - Accordion Interaktif: Menampilkan nomor urut, judul mata kuliah, ringkasan, butir pembelajaran, badge kompetensi, dan refleksi ringkas.
-  - Animasi transisi mulus menggunakan Framer Motion.
+### 4.4 F-04: Visi Pendidikan, Komitmen Guru Profesional, & RTL (Seksi 02)
+- **Transformasi Pendidikan Nasional**: Menuntun kodrat, merayakan keberagaman, pembelajaran berdiferensiasi, HOTS, dan PSE.
+- **4 Langkah Guru Profesional**: Praktisi Reflektif (*Reflective Practitioner*), Pembelajar Sepanjang Hayat (*Lifelong Learner* - PTK), Kolaborator Komunitas Praktisi (MGMP/KKG/PMM), dan Keteladanan Sistem Among.
+- **RTL (3 Aksi Konkret Memulai Karier)**: (1) Asesmen Diagnostik Kognitif & Non-kognitif, (2) Budaya Kelas Positif Berbasis PSE, (3) Kolaborasi Segitiga Emas (Sekolah, Orang Tua, Mitra).
 
-### 4.5 F-05: Modul Mata Kuliah & Tampilan Detail
-- **Deskripsi**: Katalog kartu mata kuliah dengan opsi filter semester dan eksplorasi mendalam.
-- **Filter**: `Semua`, `SEMESTER 1`, `SEMESTER 2`.
-- **Tampilan Detail Mata Kuliah (`CourseDetail`)**:
-  - Menampilkan badge kategori (Pedagogik, PPL, PSE, Refleksi, Kepemimpinan).
-  - Rangkuman esensi mata kuliah.
-  - Tiga blok analitis: (1) Hal yang dipelajari, (2) Kemampuan yang berkembang, (3) Refleksi bermakna.
-  - Tombol aksi: Akses dokumen artifak langsung ke Google Drive (atau badge "Belum tersedia" bila berstatus null).
-  - Tombol "Kembali ke daftar mata kuliah".
+### 4.5 F-05: Karya Inovasi Pembelajaran — AktifClass (Seksi 03)
+- **Deskripsi**: Showcase interaktif karya inovasi digital berbasis web untuk mengatasi kesenjangan keaktifan siswa di kelas.
+- **Empat Tab Rubrik Utama**:
+  1. *Identitas Karya*: AktifClass (*Interactive Classroom Engagement System*), web-based app untuk siswa kolaboratif & inklusi murid pemalu.
+  2. *Gagasan & Riset*: Mengatasi dominasi vs kecemasan berbicara; landasan teori *Psychological Safety* (Amy Edmondson) & Gamifikasi (Deterding).
+  3. *Rancangan & 5 Fitur*: Digital Buzzer, Estafet Tantangan, Wall of Argument (Mode Anonim), Randomizer, dan Class Energy Meter (disertai tombol simulasi interaktif).
+  4. *Evaluasi 3 Dimensi*: Kebaruan (*Novelty*), Kreativitas (*Creativity*), dan Kebermanfaatan (*Impact*).
 
-### 4.6 F-06: Galeri Dokumentasi Praktik Lapangan
-- **Deskripsi**: Dokumentasi visual kegiatan nyata selama PPL, asistensi mengajar, dan kolaborasi.
-- **Item Galeri**:
-  1. Praktik Mengajar di Kelas (Pengelolaan kelas nyata).
-  2. Bimbingan Reflektif dengan Guru Pamong (Mentoring & evaluasi harian).
-  3. Bimbingan Akademik bersama Dosen Pembimbing Lapangan.
-  4. Presentasi Produk Inovasi Pembelajaran.
-  5. Kegiatan Lapangan / Upacara Penerjunan Mahasiswa PPL.
-- **Efek**: Hover zoom, overlay deskripsi kegiatan, transisi halus.
+### 4.6 F-06: Praktik Pengalaman Lapangan (PPL) Mandiri — 6 Pilar Analisis (Seksi 04)
+- **Deskripsi**: Hub klinis terstruktur yang menyajikan 6 pilar evaluasi pelaksanaan PPL Mandiri di sekolah mitra melalui antarmuka tab tombol rapi:
+  1. 📋 **Rancangan / Perencanaan Pembelajaran**: Analisis produk modul ajar, penerapan prinsip Understanding by Design (UbD), dan diferensiasi.
+  2. 📚 **Materi Pembelajaran**: Analisis kedalaman materi bahan ajar, kontekstualisasi kearifan lokal, dan literasi-numerasi.
+  3. 🎨 **Media Pembelajaran**: Analisis efektivitas alat peraga, media digital, dan interaktivitas alat bantu kelas.
+  4. 🎥 **Video Praktik Mengajar**: Analisis rekaman video mengajar mandiri, alokasi waktu, sintaks mengajar, dan interaksi murid.
+  5. 🏫 **Kegiatan Non-Mengajar**: Dokumentasi kontribusi tugas persekolahan (piket, upacara, pembinaan ekskul, administrasi).
+  6. 📊 **Instrumen Penilaian & Analisis**: Evaluasi kisi-kisi asesmen kognitif/afektif/psikomotorik, rubrik, dan analisis ketuntasan belajar.
+- **Status Implementasi**: **Struktur tombol pilar interaktif telah aktif dan tertata rapi (Shell UI Ready)**. Konten uraian analisis mendalam siap dimasukkan saat data final tersedia.
 
-### 4.7 F-07: Hub Artifak Terverifikasi
-- **Deskripsi**: Daftar matriks tautan dokumen resmi portofolio UKMPPG untuk 11 mata kuliah.
-- **Spesifikasi Tautan**:
-  - Tautan aktif wajib membuka tab baru dengan atribut `target="_blank"` dan `rel="noopener noreferrer"`.
-  - Mata kuliah yang belum memiliki file (PPL Mandiri) menampilkan status disable abu-abu yang jelas.
+### 4.7 F-07: Perjalanan Akademik (Timeline & Accordion) (Seksi 05)
+- **Deskripsi**: Timeline interaktif semester 1 dan semester 2 dengan accordion per mata kuliah yang memuat pembelajaran utama, kompetensi, dan refleksi.
 
-### 4.8 F-08: Formulir Kontak & Footer
-- **Deskripsi**: Saluran komunikasi langsung bagi asesor, pimpinan sekolah, atau kolaborator.
-- **Field**: Nama Lengkap, Alamat Email, Subjek, Pesan.
-- **Footer**: Hak cipta © 2026, tautan email aktif (`maswaarbaurnika@gmail.com`), serta placeholder LinkedIn dan GitHub.
+### 4.8 F-08: Modul Mata Kuliah & Tampilan Detail (Seksi 06)
+- **Deskripsi**: Grid filterable (*Semua*, *SEMESTER 1*, *SEMESTER 2*) dengan kartu mata kuliah dan halaman detail mendalam beserta tombol buka artifak Google Drive.
+
+### 4.9 F-09: Galeri Dokumentasi Praktik Lapangan (Seksi 07)
+- **Deskripsi**: Dokumentasi visual kegiatan nyata PPL (Praktik mengajar, bimbingan guru pamong, dan presentasi inovasi) dalam layout 3 kolom responsif.
+
+### 4.10 F-10: Hub Artifak Terverifikasi (Seksi 08)
+- **Deskripsi**: Matriks tabel verifikasi 11 mata kuliah dengan tautan resmi Google Drive (`target="_blank"`, `rel="noopener noreferrer"`).
+
+### 4.11 F-11: Formulir Kontak & Footer (Seksi 09)
+- **Deskripsi**: Form hubungi calon guru dan footer resmi hak cipta © 2026.
 
 ---
 
 ## 5. Model Data & Entitas Sistem
 
-Untuk meningkatkan keterbacaan kode (*code readability*) dan keamanan tipe data (*type safety*), struktur data monolitik array `string[][]` dipetakan ke dalam schema TypeScript resmi berikut:
-
 ```typescript
 export type Semester = 'SEMESTER 1' | 'SEMESTER 2';
 export type CourseCategory = 'Pedagogik' | 'PPL' | 'Refleksi' | 'PSE' | 'Kepemimpinan';
 
-export interface CourseItem {
-  id: string;                         // contoh: 'filosofi-pendidikan'
-  title: string;                      // Judul resmi mata kuliah
-  category: CourseCategory;           // Kategori kompetensi
-  semester: Semester;                 // Semester perkuliahan
-  briefDescription: string;           // Deskripsi 1 kalimat untuk kartu
-  summary: string;                    // Rangkuman lengkap pada detail
-  keyLearnings: string[];             // Poin pembelajaran utama
-  competencies: string[];             // Tag keahlian yang terasah
-  reflection: string;                 // Narasi refleksi mendalam
-  artifactUrl: string | null;         // Tautan berkas Google Drive
-}
-
-export interface GalleryItem {
-  id: string;
+export interface PPLMandiriPillar {
+  id: 'rancangan' | 'materi' | 'media' | 'video' | 'nonmengajar' | 'penilaian';
+  icon: string;
   title: string;
-  category: string;
-  imageUrl: string;
-  caption?: string;
-}
-
-export interface ContactMessage {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-  submittedAt: Date;
+  subtitle: string;
+  analysisContent?: string;
+  artifactUrl?: string;
 }
 ```
 
@@ -200,88 +179,46 @@ export interface ContactMessage {
 | **Aksesibilitas** | Standar WCAG 2.1 AA | Kontras warna teks \(\ge 4.5:1\), tombol memiliki `aria-label`, navigasi dapat dioperasikan penuh via keyboard (Tab / Enter). |
 | **Responsivitas** | Multi-device Layout | Berfungsi sempurna pada resolusi Mobile (360px - 480px), Tablet (768px), Laptop/Desktop (1024px - 1440px+). |
 | **Keamanan Data** | Client-Side Security | Rel `noopener noreferrer` pada seluruh external links; proteksi XSS pada input teks. |
-| **SEO & Sharing** | Open Graph Protocol | Dukungan Open Graph Meta Tags (`og:title`, `og:description`, `og:image`, `og:url`) untuk pratinjau pesan di WhatsApp, Telegram, dan LinkedIn. |
+| **SEO & Sharing** | Open Graph Protocol | Meta tags lengkap (`title`, `description`, `og:image`, `og:title`) untuk preview profesional di WhatsApp, Telegram, dan LinkedIn. |
 | **Kompatibilitas** | Web Browsers | Chromium modern (Chrome, Edge, Brave), Firefox, Safari iOS & macOS. |
 
 ---
 
-## 7. Temuan Audit Kode & Rencana Perbaikan Segera
+## 7. Status Audit Kode & Riwayat Perubahan (Changelog)
 
-Berdasarkan audit komprehensif pada codebase saat ini, ditemukan beberapa hal penting yang harus diperbaiki:
-
-```text
-[CRITICAL] Broken Assets di Galeri:
-├── File '/gallery/Bimbingan-dengan-dosen.jpg' tidak ditemukan di public/gallery/ (404 Not Found)
-└── Item ke-5 menggunakan src dummy '#' (Menghasilkan icon gambar pecah)
-
-[MAJOR] Arsitektur Data Monolitik:
-└── Data mata kuliah disimpan sebagai string[][] di dalam App.tsx dan diakses dengan index (course[0], course[1])
-    Solusi: Pindahkan ke file modul tersendiri 'src/data/coursesData.ts'
-
-[MAJOR] Ketiadaan Routing / Deep Linking:
-└── Detail mata kuliah hanya dikontrol oleh React state selectedCourse.
-    Dampak: Pengunjung tidak dapat bookmark atau share URL spesifik ke mata kuliah tertentu.
-    Solusi: Implementasikan URL hash atau light routing.
-
-[MODERATE] Optimasi Ukuran Gambar:
-└── File 'Bimbingan.jpeg' berukuran 1.28 MB (terlalu besar untuk web).
-    Solusi: Kompresi ke format WebP (~100-150 KB).
-
-[MODERATE] Formulir Kontak Hanya Simulasi:
-└── onSubmit hanya menjalankan setSent(true) tanpa pengiriman email nyata.
-    Solusi: Sambungkan ke endpoint API email gratis (misal: Web3Forms / Formspree).
-
-[MINOR] Redundansi CSS:
-└── Direktif @tailwind di-load ganda di index.css dan App.css; beberapa class CSS lama tidak dipakai.
-```
+### Ringkasan Pembaruan (v1.3.0):
+1. **Perapian & Konsolidasi Navigasi (Header)**: Merampingkan tombol navigasi menjadi 8 tombol terorganisir (`Beranda`, `Profil & Visi`, `Karya Inovasi`, `Praktik PPL`, `Akademik`, `Galeri`, `Artifak`, `Kontak`) agar header tidak sesak di berbagai ukuran layar.
+2. **Penyediaan Shell & Tombol PPL Mandiri (F-06)**: Menambahkan seksi khusus `04 · PRAKTIK PPL MANDIRI` dengan 6 tombol pilar interaktif (Rancangan, Materi, Media, Video Praktik, Non-Mengajar, Penilaian) tanpa mengisi konten analisis terlebih dahulu sesuai arahan pengguna.
+3. **Pembaruan Nomenklatur & SEO**: Mempertahankan istilah resmi `PPG Calon Guru` dan meta tags lengkap.
+4. **Verifikasi Build & Linting**: Status build `npm run build` dan `npm run lint` telah diverifikasi bersih (**0 error / 0 warning**).
 
 ---
 
-## 8. Rencana & Roadmap Pengembangan Bertahap
+## 8. Rencana & Roadmap Pengembangan Selanjutnya
 
 ```mermaid
 gantt
-    title Roadmap Pengembangan Web Portofolio
+    title Roadmap Pengembangan Lanjutan
     dateFormat  YYYY-MM-DD
-    section Fase 1: Perbaikan Kritis & Refaktor
-    Perbaikan Broken Images Galeri      :active, p1_1, 2026-10-19, 1d
-    Refaktor Data ke coursesData.ts     :active, p1_2, after p1_1, 1d
-    Pembersihan Duplikasi CSS           :p1_3, after p1_2, 1d
-    Update SEO Meta & OpenGraph         :p1_4, after p1_3, 1d
-    section Fase 2: Fitur Nyata & Navigasi
-    Integrasi API Kontak (Web3Forms)    :p2_1, after p1_4, 2d
-    Lightbox Modal Galeri Foto          :p2_2, after p2_1, 2d
-    URL Hash Navigation untuk Detail MK :p2_3, after p2_2, 1d
-    section Fase 3: Optimasi & Ekstra
-    Kompresi Asset ke WebP (Lighthouse) :p3_1, after p2_3, 2d
-    Fitur Unduh Ringkasan CV / Resume   :p3_2, after p3_1, 2d
-    Dukungan Dark Mode Otomatis         :p3_3, after p3_2, 2d
+    section Fase 1: Pembersihan & Modulisasi Data
+    Refaktor Data ke src/data/coursesData.ts :active, p1_1, 2026-10-19, 1d
+    Pembersihan Duplikasi Tailwind CSS       :p1_2, after p1_1, 1d
+    section Fase 2: Pengisian Konten & Interaktivitas
+    Pengisian Konten 6 Pilar PPL Mandiri     :p2_1, after p1_2, 2d
+    Integrasi API Kontak Aktif (Web3Forms)   :p2_2, after p2_1, 2d
+    Lightbox Modal Galeri Foto               :p2_3, after p2_2, 1d
+    section Fase 3: Optimasi & Unduhan
+    Kompresi Asset ke WebP (Lighthouse 95+)  :p3_1, after p2_3, 2d
+    Fitur Unduh Resume / Ringkasan PDF       :p3_2, after p3_1, 2d
 ```
-
-### Rincian Fase Eksekusi:
-1. **Fase 1 (Stabilitas & Standarisasi Kode)**:
-   - Mengatasi broken image galeri dengan asset yang valid dan memasang error fallback handler.
-   - Memindahkan data `courses`, `artifactLinks`, `journeyDetails`, dan `courseDetailContent` ke modul terstruktur bertipe data aman (`src/data/coursesData.ts`).
-   - Merapikan duplikasi import `@tailwind` serta menghapus deklarasi CSS yang saling bertabrakan.
-   - Mengisi tag `<title>` dan meta OpenGraph di `index.html`.
-
-2. **Fase 2 (Fitur Interaktif & Kontak Nyata)**:
-   - Menghubungkan formulir kontak ke layanan Web3Forms / EmailJS sehingga notifikasi pesan langsung masuk ke email `maswaarbaurnika@gmail.com`.
-   - Menambahkan fitur modal lightbox ketika foto dokumentasi galeri diklik.
-   - Menambahkan dukungan navigasi URL hash (`#matakuliah/<slug>`) agar pengguna dapat menggunakan tombol back browser.
-
-3. **Fase 3 (Performa & Pengayaan Pengalaman)**:
-   - Melakukan kompresi seluruh gambar publik menjadi WebP/AVIF untuk mencapai skor performa 95+.
-   - Menambahkan tombol unduh CV ringkas / Lembar Portofolio PDF Calon Guru.
 
 ---
 
 ## 9. Kriteria Penerimaan (*Acceptance Criteria*)
 
-- [ ] Tidak ada tautan gambar rusak (*broken image 404*) pada seluruh halaman dan galeri.
-- [ ] Semua 10 tautan artifak Google Drive dapat diklik dan terbuka di tab baru tanpa kendala permission atau cache.
-- [ ] Seluruh data mata kuliah memiliki tipe data TypeScript eksplisit dan tidak menggunakan `any` atau untyped tuple.
-- [ ] Skor pengujian build (`npm run build`) dan linting (`npm run lint`) bernilai **0 error / 0 warning**.
-- [ ] Pengiriman formulir kontak berhasil mengirimkan pesan aktual ke email pemilik web.
-- [ ] Tampilan halaman teruji rapi dan proporsional pada viewport mobile (360px), tablet (768px), dan desktop (1200px+).
-
+- [x] Navigasi header tertata rapi, tidak sesak, dan terkonsolidasi secara proporsional.
+- [x] Terdapat seksi resmi Praktik PPL Mandiri dengan 6 tombol pilar interaktif yang dapat diklik bergantian.
+- [x] Konten pada 6 pilar PPL Mandiri berupa shell / placeholder terstruktur (belum diisi konten mendalam sebelum data diberikan).
+- [x] Seluruh tautan artifak Google Drive dapat diklik dan terbuka di tab baru (`rel="noopener noreferrer"`).
+- [x] Skor pengujian build (`npm run build`) dan linting (`npm run lint`) bernilai **0 error / 0 warning**.
+- [ ] Pengisian narasi analisis 6 pilar PPL Mandiri (Menunggu data dari pengguna).
