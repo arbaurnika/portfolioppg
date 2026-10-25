@@ -110,6 +110,116 @@ const courseDetailContent: Record<string, { summary: string; learning: string[];
     reflection: 'Pembelajaran ini menanamkan kesadaran bahwa menjadi guru profesional adalah perjalanan panjang yang memerlukan evaluasi dan komitmen berkesinambungan. Pengalaman ini menginspirasi saya untuk terus bertransformasi menjadi pendidik yang reflektif, berinisiatif, dan tangguh sebagai pembelajar sepanjang hayat.'
   },
 }
+// ============================================================================
+// DATA PILAR PPL MANDIRI (6 PILAR)
+// Untuk menambahkan link dokumen/video, isi nilai pada properti `driveUrl`
+// Contoh: driveUrl: 'https://drive.google.com/file/d/.../view?usp=sharing'
+// ============================================================================
+export interface PPLPillarItem {
+  id: 'rancangan' | 'materi' | 'media' | 'video' | 'nonmengajar' | 'penilaian'
+  badge: string
+  title: string
+  subtitle: string
+  description: string
+  keyPoints: string[]
+  driveUrl: string | null // <-- TEMPAT MELETAKKAN LINK DRIVE / YOUTUBE
+  actionLabel: string
+  fileType: string
+}
+
+const pplPillarsData: Record<'rancangan' | 'materi' | 'media' | 'video' | 'nonmengajar' | 'penilaian', PPLPillarItem> = {
+  rancangan: {
+    id: 'rancangan',
+    badge: 'PILAR 01 · RANCANGAN PEMBELAJARAN',
+    title: 'Analisis Produk Rancangan / Perencanaan Pembelajaran',
+    subtitle: 'Evaluasi modul ajar berbasis prinsip Understanding by Design (UbD) dan diferensiasi pembelajaran.',
+    description: 'Rancangan modul ajar disusun dengan menerapkan kerangka Understanding by Design (UbD) yang berorientasi pada capaian pembelajaran, diferensiasi konten/proses/produk, serta pengintegrasian pembelajaran sosial emosional (PSE).',
+    keyPoints: [
+      'Alur Tujuan Pembelajaran (ATP) terukur & berorientasi HOTS',
+      'Penerapan diferensiasi berbasis asesmen diagnostik awal murid',
+      'Integrasi kesepakatan kelas dan nilai karakter budi pekerti',
+    ],
+    driveUrl: 'https://drive.google.com/drive/folders/1iCqaKmyQzmKRJwBMKncWHRmMcu1Ayh1x?usp=sharing', // <-- Masukkan Link Google Drive Modul Ajar/RPP
+    actionLabel: 'Buka Dokumen Modul Ajar (Google Drive)',
+    fileType: 'Dokumen Modul Ajar & RPP',
+  },
+  materi: {
+    id: 'materi',
+    badge: 'PILAR 02 · BAHAN AJAR',
+    title: 'Analisis Materi Pembelajaran yang Disusun & Diterapkan',
+    subtitle: 'Kedalaman bahan ajar, kontekstualisasi kearifan lokal, dan penguatan literasi-numerasi.',
+    description: 'Bahan ajar dirancang relevan dengan kehidupan nyata peserta didik, mengakomodasi kontekstualisasi masalah aktual di sekitar siswa, serta memfasilitasi peningkatan kecakapan literasi dan numerasi secara bertahap.',
+    keyPoints: [
+      'Struktur materi tersusun runut dari konsep konkret ke pemahaman abstrak',
+      'Kontekstualisasi kearifan lokal dan situasi kehidupan nyata siswa',
+      'Penyediaan sumber belajar pendukung multisumber yang inklusif',
+    ],
+    driveUrl: 'https://drive.google.com/drive/folders/1MfU5yHSTN5vfZ7C8cfhOLexFr0-co12r?usp=sharing', // <-- Masukkan Link Google Drive Bahan Ajar
+    actionLabel: 'Buka Bahan & Materi Ajar (Google Drive)',
+    fileType: 'Bahan Ajar & Handout',
+  },
+  media: {
+    id: 'media',
+    badge: 'PILAR 03 · MEDIA & ALAT BANTU',
+    title: 'Analisis Media Pembelajaran yang Dipergunakan',
+    subtitle: 'Efektivitas alat peraga konkret, media digital interaktif, dan keterlibatan visual siswa.',
+    description: 'Pemanfaatan media pembelajaran interaktif (termasuk media digital & alat peraga konkret) untuk memicu atensi, memvisualisasikan konsep abstrak, dan memfasilitasi partisipasi aktif seluruh peserta didik.',
+    keyPoints: [
+      'Media visual dan interaktif yang memudahkan pemahaman konsep',
+      'Kesesuaian media dengan modalitas belajar (audio, visual, kinestetik)',
+      'Interaktivitas respons siswa saat proses kegiatan belajar berlangsung',
+    ],
+    driveUrl: null, // <-- Masukkan Link Google Drive / Canva Media
+    actionLabel: 'Buka Media Pembelajaran (Drive / Canva)',
+    fileType: 'Media Presentasi & Alat Bantu',
+  },
+  video: {
+    id: 'video',
+    badge: 'PILAR 04 · VIDEO PRAKTIK MENGAJAR',
+    title: 'Analisis Video Pelaksanaan Praktik Mengajar Mandiri',
+    subtitle: 'Rekaman video mengajar mandiri, sintaks pembelajaran nyata, alokasi waktu, dan interaksi murid.',
+    description: 'Dokumentasi video pelaksanaan praktik mengajar mandiri menampilkan keterlaksanaan sintaks secara utuh dari kegiatan apersepsi, kegiatan inti berdiferensiasi, hingga asesmen formatif dan penutup reflektif.',
+    keyPoints: [
+      'Keterlaksanaan sintaks model pembelajaran (PBL / PJBL)',
+      'Manajemen kelas efektif, artikulasi instruksi, dan apresiasi positif',
+      'Kualitas interaksi dialogis dan iklim belajar yang aman & suportif',
+    ],
+    driveUrl: null, // <-- Masukkan Link YouTube / Google Drive Video Praktik
+    actionLabel: 'Tonton Video Praktik Mengajar (YouTube / Drive)',
+    fileType: 'Rekaman Video Praktik Mengajar',
+  },
+  nonmengajar: {
+    id: 'nonmengajar',
+    badge: 'PILAR 05 · TUGAS NON-MENGAJAR',
+    title: 'Analisis Kegiatan Non-Mengajar di Sekolah Mitra',
+    subtitle: 'Kontribusi tugas persekolahan: piket harian, upacara, pembinaan ekstrakurikuler, dan administrasi.',
+    description: 'Keterlibatan aktif dalam seluruh ekosistem persekolahan sebagai bentuk internalisasi peran guru seutuhnya, meliputi pelaksanaan piket kedisiplinan gerbang, pembinaan upacara bendera, bimbingan ekskul, serta tata kelola administrasi sekolah mitra.',
+    keyPoints: [
+      'Pelaksanaan tugas piket harian dan pemantauan budaya 5S sekolah',
+      'Pendampingan upacara bendera, apel pagi, dan kegiatan keagamaan',
+      'Kolaborasi pembinaan bakat/ekskul siswa dan administrasi sekolah',
+    ],
+    driveUrl: null, // <-- Masukkan Link Google Drive Laporan Non-Mengajar
+    actionLabel: 'Buka Laporan Kegiatan Non-Mengajar (Google Drive)',
+    fileType: 'Laporan & Foto Non-Mengajar',
+  },
+  penilaian: {
+    id: 'penilaian',
+    badge: 'PILAR 06 · ASESMEN & EVALUASI',
+    title: 'Instrumen Penilaian yang Dirancang beserta Analisisnya',
+    subtitle: 'Kisi-kisi asesmen diagnostik, formatif, sumatif, rubrik penilaian, dan analisis ketercapaian.',
+    description: 'Penyusunan instrumen evaluasi yang selaras dengan tujuan pembelajaran, mencakup asesmen awal (diagnostik), asesmen proses (formatif berkelanjutan), serta rubrik penilaian autentik ranah kognitif, afektif, dan psikomotorik.',
+    keyPoints: [
+      'Kesesuaian kisi-kisi dan indikator ketercapaian tujuan pembelajaran',
+      'Rubrik penilaian holistik ranah kognitif, afektif, dan psikomotorik',
+      'Analisis ketuntasan hasil belajar dan tindak lanjut remidial/pengayaan',
+    ],
+    driveUrl: 'https://drive.google.com/drive/folders/1eJqKv2fFSx198xtcT0auKqrybmJeSYN0?usp=sharing', // <-- Masukkan Link Google Drive Instrumen Penilaian
+    actionLabel: 'Buka Instrumen Penilaian & Rubrik (Google Drive)',
+    fileType: 'Kisi-kisi, Rubrik & Analisis Nilai',
+  },
+}
+
 const gallery = [
   ['Praktik Mengajar di Kelas', 'Praktik Mengajar', '/gallery/Praktik-mengajar.jpeg'],
   ['Bimbingan Reflektif dengan Guru Pamong', 'Bimbingan & Mentoring', '/gallery/Bimbingan.jpeg'],
@@ -450,48 +560,57 @@ function App() {
             </div>
 
             <div className="ppl-panel">
-              <motion.div key={pplTab} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="ppl-placeholder-content">
-                <span className="ppl-placeholder-badge">✦ 04 · FOKUS ANALISIS KLINIS PPL MANDIRI</span>
-                {pplTab === 'rancangan' && (
-                  <>
-                    <h4>Analisis Produk Rancangan / Perencanaan Pembelajaran</h4>
-                    <p>Fokus evaluasi modul ajar, penerapan prinsip Understanding by Design (UbD), dan kesesuaian pembelajaran berdiferensiasi.</p>
-                  </>
-                )}
-                {pplTab === 'materi' && (
-                  <>
-                    <h4>Analisis Materi Pembelajaran yang Disusun & Diterapkan</h4>
-                    <p>Fokus evaluasi kedalaman bahan ajar, kontekstualisasi materi lokal, dan penguatan literasi-numerasi murid.</p>
-                  </>
-                )}
-                {pplTab === 'media' && (
-                  <>
-                    <h4>Analisis Media Pembelajaran yang Dipergunakan</h4>
-                    <p>Fokus evaluasi efektivitas alat peraga, media digital, dan interaktivitas media dalam merangsang atensi kelas.</p>
-                  </>
-                )}
-                {pplTab === 'video' && (
-                  <>
-                    <h4>Analisis Video Pelaksanaan Praktik Mengajar Mandiri</h4>
-                    <p>Fokus evaluasi rekaman video mengajar, sintaks pembelajaran nyata, alokasi waktu, dan dinamika interaksi guru-murid.</p>
-                  </>
-                )}
-                {pplTab === 'nonmengajar' && (
-                  <>
-                    <h4>Analisis Kegiatan Non-Mengajar di Sekolah Mitra</h4>
-                    <p>Fokus dokumentasi peran guru dalam tugas non-mengajar (piket harian, upacara, pembinaan ekstrakurikuler, dan administrasi sekolah).</p>
-                  </>
-                )}
-                {pplTab === 'penilaian' && (
-                  <>
-                    <h4>Instrumen Penilaian yang Dirancang beserta Analisisnya</h4>
-                    <p>Fokus evaluasi kisi-kisi asesmen diagnostik, formatif, sumatif, rubrik ketercapaian, dan analisis ketuntasan hasil belajar.</p>
-                  </>
-                )}
-                <div className="ppl-placeholder-card">
-                  <p><strong>Status Bagian:</strong> Tombol pilar telah aktif dan tertata rapi. Konten uraian analisis mendalam dan dokumen pendukung siap ditambahkan.</p>
-                </div>
-              </motion.div>
+              {(() => {
+                const currentPpl = pplPillarsData[pplTab]
+                return (
+                  <motion.div key={pplTab} initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} className="ppl-panel-content">
+                    <div className="ppl-panel-header">
+                      <span className="ppl-placeholder-badge">✦ {currentPpl.badge}</span>
+                      <span className="ppl-filetype-badge">{currentPpl.fileType}</span>
+                    </div>
+
+                    <h4>{currentPpl.title}</h4>
+                    <p className="ppl-subtitle">{currentPpl.subtitle}</p>
+                    <p className="ppl-description">{currentPpl.description}</p>
+
+                    <div className="ppl-points-box">
+                      <strong>Fokus & Indikator Analisis:</strong>
+                      <ul>
+                        {currentPpl.keyPoints.map((point) => (
+                          <li key={point}>
+                            <Check size={14} className="ppl-check-icon" />
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="ppl-action-footer">
+                      {currentPpl.driveUrl ? (
+                        <a
+                          href={currentPpl.driveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="ppl-action-button active"
+                        >
+                          <span>{currentPpl.actionLabel}</span>
+                          <ArrowUpRight size={15} />
+                        </a>
+                      ) : (
+                        <div className="ppl-action-button disabled" title="Isi link pada variabel pplPillarsData di src/App.tsx">
+                          <ExternalLink size={14} />
+                          <span>Tautan Belum Dilampirkan (Isi pada `driveUrl`)</span>
+                        </div>
+                      )}
+                      <small className="ppl-action-hint">
+                        {currentPpl.driveUrl
+                          ? '✓ Tautan terhubung & siap diverifikasi penguji'
+                          : 'ℹ️ Masukkan link Drive/YouTube pada `pplPillarsData` untuk mengaktifkan tombol'}
+                      </small>
+                    </div>
+                  </motion.div>
+                )
+              })()}
             </div>
           </div>
         </div>
