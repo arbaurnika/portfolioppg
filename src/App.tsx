@@ -169,7 +169,7 @@ const pplPillarsData: Record<'rancangan' | 'materi' | 'media' | 'video' | 'nonme
       'Kesesuaian media dengan modalitas belajar (audio, visual, kinestetik)',
       'Interaktivitas respons siswa saat proses kegiatan belajar berlangsung',
     ],
-    driveUrl: null, // <-- Masukkan Link Google Drive / Canva Media
+    driveUrl: 'https://drive.google.com/drive/folders/1eTuvFLLu50xWIj03XWnMv2YNoIXkYBGc?usp=sharing', // <-- Masukkan Link Google Drive / Canva Media
     actionLabel: 'Buka Media Pembelajaran (Drive / Canva)',
     fileType: 'Media Presentasi & Alat Bantu',
   },
@@ -184,7 +184,7 @@ const pplPillarsData: Record<'rancangan' | 'materi' | 'media' | 'video' | 'nonme
       'Manajemen kelas efektif, artikulasi instruksi, dan apresiasi positif',
       'Kualitas interaksi dialogis dan iklim belajar yang aman & suportif',
     ],
-    driveUrl: null, // <-- Masukkan Link YouTube / Google Drive Video Praktik
+    driveUrl: 'https://drive.google.com/drive/folders/1UT8w9SBxalVfmTkgenIfaufsMAZzezjf?usp=sharing', // <-- Masukkan Link YouTube / Google Drive Video Praktik
     actionLabel: 'Tonton Video Praktik Mengajar (YouTube / Drive)',
     fileType: 'Rekaman Video Praktik Mengajar',
   },
@@ -199,7 +199,7 @@ const pplPillarsData: Record<'rancangan' | 'materi' | 'media' | 'video' | 'nonme
       'Pendampingan upacara bendera, apel pagi, dan kegiatan keagamaan',
       'Kolaborasi pembinaan bakat/ekskul siswa dan administrasi sekolah',
     ],
-    driveUrl: null, // <-- Masukkan Link Google Drive Laporan Non-Mengajar
+    driveUrl: 'https://drive.google.com/drive/folders/1eTuvFLLu50xWIj03XWnMv2YNoIXkYBGc?usp=sharing', // <-- Masukkan Link Google Drive Laporan Non-Mengajar
     actionLabel: 'Buka Laporan Kegiatan Non-Mengajar (Google Drive)',
     fileType: 'Laporan & Foto Non-Mengajar',
   },
