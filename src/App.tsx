@@ -199,7 +199,7 @@ const pplPillarsData: Record<'rancangan' | 'materi' | 'media' | 'video' | 'nonme
       'Pendampingan upacara bendera, apel pagi, dan kegiatan keagamaan',
       'Kolaborasi pembinaan bakat/ekskul siswa dan administrasi sekolah',
     ],
-    driveUrl: 'https://drive.google.com/drive/folders/1eTuvFLLu50xWIj03XWnMv2YNoIXkYBGc?usp=sharing', // <-- Masukkan Link Google Drive Laporan Non-Mengajar
+    driveUrl: 'https://drive.google.com/drive/folders/1wNrmORdnT7YmnYyuDH_k-3a8MOpCwGWC?usp=sharing', // <-- Masukkan Link Google Drive Laporan Non-Mengajar
     actionLabel: 'Buka Laporan Kegiatan Non-Mengajar (Google Drive)',
     fileType: 'Laporan & Foto Non-Mengajar',
   },
